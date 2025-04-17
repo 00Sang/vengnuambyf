@@ -1,0 +1,14 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "vengnuam",
+    "user": "postgres",
+    "password": "root",
+    "dialect": "postgres"
+  },
+  "server": {
+    "port": 3000
+  },
+  "environment": "development"
+}
