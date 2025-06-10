@@ -4,6 +4,7 @@ class LyricsController {
   async getAll(req, res) {
     try {
       const lyrics = await Lyrics.findAll(); // Fetch all lyrics
+      console.log("Lyrics", lyrics);
       res.status(200).json(lyrics);
     } catch (error) {
       res.status(500).json({ error: 'An error occurred while fetching data.' });
