@@ -6,7 +6,7 @@ dotenv.config();
 // Use the DATABASE_URL from environment variables
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
-  logging: false,
+  logging: console.log,
   ssl: true, // Required for NeonDB
   dialectOptions: {
     ssl: {
