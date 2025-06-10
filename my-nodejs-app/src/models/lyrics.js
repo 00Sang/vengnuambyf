@@ -27,6 +27,7 @@ Lyrics.init(
   {
     sequelize,
     modelName: "Lyrics",
+    tableName: "Lyrics",
     timestamps: true,
   }
 );
