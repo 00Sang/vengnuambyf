@@ -3,14 +3,17 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize({
-  host: process.env.DB_HOST,         
+// Use the DATABASE_URL from environment variables
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
-  port: process.env.DB_PORT || 5432, 
-  username: process.env.DB_USERNAME,     
-  password: process.env.DB_PASSWORD,     
-  database: process.env.DB_DATABASE,     
   logging: false,
+  ssl: true, // Required for NeonDB
+  dialectOptions: {
+    ssl: {
+      require: true, // This helps with SSL issues on Neon
+      rejectUnauthorized: false // Use with caution in production
+    }
+  }
 });
 
 sequelize.authenticate()
