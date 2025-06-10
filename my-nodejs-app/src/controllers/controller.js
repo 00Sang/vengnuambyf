@@ -7,6 +7,7 @@ class LyricsController {
       console.log("Lyrics", lyrics);
       res.status(200).json(lyrics);
     } catch (error) {
+      console.error('Error fetching lyrics:', err);
       res.status(500).json({ error: 'An error occurred while fetching data.' });
     }
   }
